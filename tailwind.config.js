@@ -6,13 +6,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#6D1616",
-        orange: "#B43A06",
+        dark: "#000",
+        orange: "#333",
         peach: "#F9924D",
         yellow: "#FBCD5F",
-        light: "#FFE5A8",
-        black: "#111111",
+        light: "#fff",
+        black: "#000",
       },
+    },
+    letterSpacing: {
+      widest: ".22rem",
+    },
+    fontFamily: {
+      mystery: ["Mystery Quest", "cursive"],
+      inter: ["Inter", "sans-serif"],
     },
     dropShadow: {
       xl: "0 20px 20px rgba(0, 0, 0, 0.75)",

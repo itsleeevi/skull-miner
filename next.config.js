@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   webpack(config) {
     config.module.rules.push({
-      test: /\.(le|c)ss$/,
+      test: /\^(?!tailwind.css).(le|c)ss$/,
       use: [
         MiniCssExtractPlugin.loader,
         {
