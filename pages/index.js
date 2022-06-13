@@ -8,7 +8,7 @@ import discord from "../public/image/discord.png";
 import twitter from "../public/image/twitter.png";
 import skull1 from "../public/image/skull1.png";
 import skull2 from "../public/image/skull2.png";
-import Bg from "../components/Bg";
+import Particles from "../components/Particles";
 
 export default function Home() {
   const [value, setValue] = useState(0);
@@ -27,23 +27,21 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      {/*
-      <div className="hidden md:block z-1">
-        <Bg />
-      </div>
-  */}
+      {/*  */}
+
+      <Particles id="tsparticles" />
 
       <div className="mt-10 mb-20">
         <div className="flex justify-center bg-black">
-          <div className="flex flex-col items-center w-full sm:w-1/4 0 gap-6 bg-black">
-            <div className="text-8xl font-bold font-mystery text-center text-white space-y-4">
+          <div className="z-10 flex flex-col items-center w-full lg:w-1/4 0 gap-6 px-2 lg:px-0">
+            <div className="text-8xl font-bold font-mystery text-center text-white space-y-4 bg-black/80">
               <p>SKULL</p>
               <p>MINER</p>
             </div>
-            <h1 className="text-lg text-center font-inter text-white">
+            <h1 className="text-lg text-center font-inter text-white bg-black/80">
               Delicious daily return and lowest dev fee.
             </h1>
-            <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-8 py-10 w-full gap-6 text-black">
+            <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-6 py-10 w-full gap-6 text-black border-8 border-purple">
               <div className="flex flex-row justify-between">
                 <h1 className="text-xl font-inter text-center font-normal">
                   Contract
@@ -80,7 +78,7 @@ export default function Home() {
                 />
               </div>
 
-              <button className="bg-dark hover:bg-orange text-white font-bold py-2 px-4 rounded-button">
+              <button className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button">
                 <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
                   MINE PUMPKINS
                 </h1>
@@ -97,19 +95,19 @@ export default function Home() {
                 </h1>
               </div>
               <div className="flex flex-row justify-between gap-4">
-                <button className="bg-dark hover:bg-orange text-white font-bold py-2 px-4 rounded-button w-1/2">
+                <button className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-1/2">
                   <h1 className="text-lg text-center font-mystery font-bold">
                     Rebake
                   </h1>
                 </button>
-                <button className="bg-dark hover:bg-orange text-white font-bold py-2 px-4 rounded-button w-1/2">
+                <button className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-1/2">
                   <h1 className="text-lg text-center font-mystery font-bold tracking-wider">
                     Eat PUMPKINS
                   </h1>
                 </button>
               </div>
             </div>
-            <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-8 py-10 w-full gap-2 text-black">
+            <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-6 py-10 w-full gap-2 text-black border-8 border-purple">
               <h1 className="text-3xl text-start text-black font-mystery">
                 Nutrition Facts
               </h1>
@@ -133,7 +131,7 @@ export default function Home() {
                 <h1 className="text-xl text-center font-inter font-bold">3%</h1>
               </div>
             </div>
-            <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-8 py-10 w-full gap-6 text-black  mb-16 ">
+            <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-6 py-10 w-full gap-6 text-black mb-6 border-8 border-purple">
               <h1 className="text-3xl text-center text-black font-mystery">
                 Referral Link
               </h1>
