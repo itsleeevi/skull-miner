@@ -89,7 +89,10 @@ export default function Home() {
           property="og:description"
           content="Earn 2% daily staking $pumpkin"
         />
-        <meta property="og:image" content="" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/GCSZFC0/skullminer.png"
+        />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="" />
@@ -98,7 +101,10 @@ export default function Home() {
           property="twitter:description"
           content="Earn 2% daily staking $pumpkin"
         />
-        <meta property="twitter:image" content="" />
+        <meta
+          property="twitter:image"
+          content="https://i.ibb.co/GCSZFC0/skullminer.png"
+        />
         <meta property="twitter:site" content="" />
         <meta property="twitter:creator" content="" />
       </Head>
@@ -192,18 +198,36 @@ export default function Home() {
                             reverse
                           />
                         </Box>
-                        <Box
-                          onClick={async () => {
-                            setAmount(await getMaxStaking());
-                          }}
-                          margin={{
-                            right: "10px",
-                          }}
-                        >
-                          <Text className="font-bold" size="small">
-                            Max
-                          </Text>
-                        </Box>
+                        {!connected ? (
+                          <>
+                            <div className="cursor-no-drop">
+                              <Box
+                                margin={{
+                                  right: "10px",
+                                }}
+                              >
+                                <Text className="font-bold" size="small">
+                                  Max
+                                </Text>
+                              </Box>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <Box
+                              onClick={async () => {
+                                setAmount(await getMaxStaking());
+                              }}
+                              margin={{
+                                right: "10px",
+                              }}
+                            >
+                              <Text className="font-bold" size="small">
+                                Max
+                              </Text>
+                            </Box>
+                          </>
+                        )}
                       </Stack>
                     </div>
                   </Grommet>
@@ -290,46 +314,102 @@ export default function Home() {
                               reverse
                             />
                           </Box>
-                          <Box
-                            onClick={async () => {
-                              setAmountReward(yourReward);
-                            }}
-                            margin={{
-                              right: "10px",
-                            }}
-                          >
-                            <Text className="font-bold" size="small">
-                              Max
-                            </Text>
-                          </Box>
+                          {!connected ? (
+                            <>
+                              <div className="cursor-no-drop">
+                                <Box
+                                  margin={{
+                                    right: "10px",
+                                  }}
+                                >
+                                  <Text className="font-bold" size="small">
+                                    Max
+                                  </Text>
+                                </Box>
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <Box
+                                onClick={async () => {
+                                  setAmountReward(yourReward);
+                                }}
+                                margin={{
+                                  right: "10px",
+                                }}
+                              >
+                                <Text className="font-bold" size="small">
+                                  Max
+                                </Text>
+                              </Box>
+                            </>
+                          )}
                         </Stack>
                       </div>
                     </Grommet>
                   </Box>
                 </div>
-                <button
-                  className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-1/2"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    unstake(amountReward);
-                  }}
-                >
-                  <h1 className="text-lg text-center font-mystery font-bold tracking-wider">
-                    Eat PUMPKINS
-                  </h1>
-                </button>
+                {!connected ? (
+                  <>
+                    <button
+                      className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-1/2"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        unstake(amountReward);
+                      }}
+                      disabled
+                    >
+                      <h1 className="text-lg text-center font-mystery font-bold tracking-wider">
+                        Eat PUMPKINS
+                      </h1>
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-1/2"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        unstake(amountReward);
+                      }}
+                    >
+                      <h1 className="text-lg text-center font-mystery font-bold tracking-wider">
+                        Eat PUMPKINS
+                      </h1>
+                    </button>
+                  </>
+                )}
               </div>
-              <button
-                className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  unstakeAll();
-                }}
-              >
-                <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
-                  Unstake PUMPKIN
-                </h1>
-              </button>
+              {!connected ? (
+                <>
+                  <button
+                    className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      unstakeAll();
+                    }}
+                    disabled
+                  >
+                    <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
+                      Unstake PUMPKIN
+                    </h1>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      unstakeAll();
+                    }}
+                  >
+                    <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
+                      Unstake PUMPKIN
+                    </h1>
+                  </button>
+                </>
+              )}
             </div>
             <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-6 py-10 w-full gap-2 text-black border-8 border-purple">
               <h1 className="text-3xl text-start text-black font-mystery cursor-default">
