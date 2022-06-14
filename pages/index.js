@@ -87,18 +87,24 @@ export default function Home() {
         <meta property="og:title" content="Skull Miner" />
         <meta
           property="og:description"
-          content="Earn 2% daily staking $pumpkin"
+          content="Earn 4% daily staking $pumpkin"
         />
-        <meta property="og:image" content="ű" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/GCSZFC0/skullminer.png"
+        />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="" />
         <meta property="twitter:title" content="Skull Miner" />
         <meta
           property="twitter:description"
-          content="Earn 2% daily staking $pumpkin"
+          content="Earn 4% daily staking $pumpkin"
         />
-        <meta property="twitter:image" content="" />
+        <meta
+          property="twitter:image"
+          content="https://i.ibb.co/GCSZFC0/skullminer.png"
+        />
         <meta property="twitter:site" content="" />
         <meta property="twitter:creator" content="" />
       </Head>
