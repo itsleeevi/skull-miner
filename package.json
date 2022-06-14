@@ -12,8 +12,10 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@maticnetwork/maticjs": "^3.3.0",
     "@zeit/next-less": "^1.0.1",
     "framer-motion": "^6",
+    "grommet": "^2.24.0",
     "less": "^4.1.2",
     "mini-css-extract-plugin": "^2.6.0",
     "next": "12.1.6",
@@ -23,7 +25,9 @@
     "react-spring": "^9.4.5",
     "react-tsparticles": "^2.0.6",
     "rsuite": "^5.10.0",
-    "tsparticles-slim": "^2.0.6"
+    "styled-components": "^5.3.5",
+    "tsparticles-slim": "^2.0.6",
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

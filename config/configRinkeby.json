@@ -1,0 +1,11 @@
+{
+  "CHAIN_ID": "0x4",
+  "CHAIN_ID_DEC": "4",
+  "CHAIN_NAME": "Rinkeby",
+  "CURRENCY_NAME:": "ETH",
+  "CURRENCY_SYMBOL": "ETH",
+  "RPC": "https://speedy-nodes-nyc.moralis.io/4a6cc15939827f0d3ad58ddf/eth/rinkeby",
+  "BLOCK_EXPLORER": "https://testnet.ftmscan.com",
+  "STAKING_ADDRESS": "0x851428693c1fa86c256d9e9f9a6a510c23e15e21",
+  "TOKEN_ADDRESS": "0xfd07caa87d9e25032141878fbb82ed2ac54916ed"
+}
