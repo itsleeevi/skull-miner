@@ -149,26 +149,23 @@ export default function Home() {
                   Contract
                 </h1>
                 <h1 className="text-xl font-inter font-bold text-center">
-                  {nFormatter(totalStaked, 1)}
-                  <span className="font-mystery"> PUMPKIN</span>
+                  {nFormatter(totalStaked, 1)} PUMPKIN
                 </h1>
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
                 <h1 className="text-xl text-center font-inter font-normal">
-                  Your <span className="font-mystery"> PUMPKINS</span>
+                  Your PUMPKINS
                 </h1>
                 <h1 className="text-xl text-center font-inter font-bold">
-                  {nFormatter(yourBalance, 1)}{" "}
-                  <span className="font-mystery"> PUMPKIN</span>
+                  {nFormatter(yourBalance, 1)} PUMPKIN
                 </h1>
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
                 <h1 className="text-xl sm:text-md text-center font-inter font-normal">
-                  Your Staked <span className="font-mystery"> PUMPKINS</span>
+                  Your Staked PUMPKINS
                 </h1>
                 <h1 className="text-xl text-center font-inter font-bold">
-                  {nFormatter(yourStakedBalance, 1)}{" "}
-                  <span className="font-mystery"> PUMPKIN</span>
+                  {nFormatter(yourStakedBalance, 1)} PUMPKIN
                 </h1>
               </div>
               <div className="inputNum rounded">
@@ -264,7 +261,7 @@ export default function Home() {
                   Your Rewards
                 </h1>
                 <h1 className="text-xl text-center font-inter font-bold">
-                  {yourReward} <span className="font-mystery"> PUMPKIN</span>
+                  {yourReward} PUMPKIN
                 </h1>
               </div>
 
@@ -302,7 +299,7 @@ export default function Home() {
                             }}
                           >
                             <Text className="font-bold" size="small">
-                              All Rewards
+                              Max
                             </Text>
                           </Box>
                         </Stack>
