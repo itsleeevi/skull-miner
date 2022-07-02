@@ -117,7 +117,7 @@ function MyApp({ Component, pageProps }) {
     }
 
     await stakingContract.methods
-      .Stake(web3.utils.toWei(amount.toString(), "ether"))
+      .Lock(web3.utils.toWei(amount.toString(), "ether"))
       .send({
         from: accounts[0],
       })
@@ -126,30 +126,12 @@ function MyApp({ Component, pageProps }) {
       });
   };
 
-  const unstake = async (amount) => {
+  const claimRewards = async () => {
     if (window.ethereum.networkVersion !== CONFIG.CHAIN_ID_DEC) {
       switchNetwork();
     }
     await stakingContract.methods
-      .Unstake(web3.utils.toWei(amount.toString(), "ether"))
-      .send({
-        from: accounts[0],
-      })
-      .then(() => {
-        setStaked(!staked);
-      });
-  };
-
-  const unstakeAll = async () => {
-    if (window.ethereum.networkVersion !== CONFIG.CHAIN_ID_DEC) {
-      switchNetwork();
-    }
-    let stakedBalance = await stakingContract.methods
-      .CheckStakedBalance(accounts[0])
-      .call();
-
-    await stakingContract.methods
-      .Unstake(stakedBalance)
+      .ClaimRewards()
       .send({
         from: accounts[0],
       })
@@ -168,7 +150,7 @@ function MyApp({ Component, pageProps }) {
   };
 
   const TotalStaked = async () => {
-    const result = await stakingContractHttp.methods.totalStaked().call();
+    const result = await stakingContractHttp.methods.totalLocked().call();
 
     setTotalStaked(
       Number(web3Http.utils.fromWei(result.toString(), "ether")).toFixed(0)
@@ -184,7 +166,7 @@ function MyApp({ Component, pageProps }) {
 
   const YourStakedBalance = async () => {
     let result = await stakingContract.methods
-      .CheckStakedBalance(accounts[0])
+      .CheckLockedBalance(accounts[0])
       .call();
 
     setYourStakedBalance(
@@ -193,17 +175,11 @@ function MyApp({ Component, pageProps }) {
   };
 
   const YourReward = async () => {
-    let stakedBalance = await stakingContract.methods
-      .CheckStakedBalance(accounts[0])
+    let reward = await stakingContract.methods
+      .GetClaimableRewards(accounts[0])
       .call();
 
-    let currentStake = await stakingContract.methods
-      .GetCurrentStake(accounts[0])
-      .call();
-
-    const result =
-      Number(web3.utils.fromWei(stakedBalance.toString(), "ether")) -
-      Number(web3.utils.fromWei(currentStake.toString(), "ether"));
+    const result = Number(web3.utils.fromWei(reward.toString(), "ether"));
 
     setYourReward(result.toFixed(4));
   };
@@ -354,12 +330,11 @@ function MyApp({ Component, pageProps }) {
         apr,
         dailyReturn,
         yourReward,
-        unstake,
-        unstakeAll,
         amount,
         amountReward,
         setAmount,
         setAmountReward,
+        claimRewards,
       }}
     >
       <Component {...pageProps} />

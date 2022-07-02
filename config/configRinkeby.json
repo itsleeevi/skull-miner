@@ -4,8 +4,8 @@
   "CHAIN_NAME": "Rinkeby",
   "CURRENCY_NAME:": "ETH",
   "CURRENCY_SYMBOL": "ETH",
-  "RPC": "https://speedy-nodes-nyc.moralis.io/4a6cc15939827f0d3ad58ddf/eth/rinkeby",
+  "RPC": "https://eth-rinkeby.alchemyapi.io/v2/qu04AFXrGBhQ1Vk7_wVoUDCE-oylsQlm",
   "BLOCK_EXPLORER": "https://testnet.ftmscan.com",
-  "STAKING_ADDRESS": "0x851428693c1fa86c256d9e9f9a6a510c23e15e21",
+  "STAKING_ADDRESS": "0x61BA0246C2c478d30C84ec5F50F9c1D9b94bb0EB",
   "TOKEN_ADDRESS": "0xfd07caa87d9e25032141878fbb82ed2ac54916ed"
 }
