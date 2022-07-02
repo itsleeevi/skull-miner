@@ -7,8 +7,7 @@ import { Box, Grommet, Stack, TextInput, Text } from "grommet";
 import { InputNumber, Input } from "rsuite";
 import discord from "../public/image/discord.png";
 import twitter from "../public/image/twitter.png";
-import skull1 from "../public/image/skull1.png";
-import skull2 from "../public/image/skull2.png";
+import pumpkin from "../public/image/pumpkin.png";
 import Particles from "../components/Particles";
 import Header from "../components/Header";
 import customTheme from "../config/customTheme";
@@ -35,7 +34,8 @@ export default function Home() {
     amount,
     amountReward,
     setAmount,
-    setAmountReward,
+    compound,
+    price,
   } = useContext(SkullContext);
 
   function nFormatter(num, digits) {
@@ -122,27 +122,61 @@ export default function Home() {
             <div className="md:hidden flex items-center space-x-6 w-full">
               {connected ? (
                 <>
-                  <button
-                    className="w-full bg-black hover:bg-purple text-white font-bold font-mystery hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      disconnectMetaMask();
-                    }}
-                  >
-                    <h1 className="text-2xl">Disconnect</h1>
-                  </button>
+                  <div className="flex flex-col gap-2 w-full">
+                    <button
+                      className="w-full bg-black hover:bg-purple text-white font-bold font-mystery hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        disconnectMetaMask();
+                      }}
+                    >
+                      <h1 className="text-2xl">Disconnect</h1>
+                    </button>
+                    <div className="w-full justify-center bg-black hover:bg-purple text-white font-mystery font-bold hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg">
+                      <a
+                        className="hover:no-underline hover:text-black flex flex-row gap-2 justify-center"
+                        href="https://spooky.fi/#/swap?outputCurrency=0xad522217e64ec347601015797dd39050a2a69694"
+                      >
+                        <span className="text-2xl no-underline">BUY</span>
+                        <Image
+                          src={pumpkin}
+                          layout="fixed"
+                          width={30}
+                          height={30}
+                        />
+                        <p className="text-2xl no-underline ">${price}</p>
+                      </a>
+                    </div>
+                  </div>
                 </>
               ) : (
                 <>
-                  <button
-                    className="w-full bg-black hover:bg-purple text-white font-bold font-mystery hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      connectMetaMask();
-                    }}
-                  >
-                    <h1 className="text-2xl">Connect</h1>
-                  </button>
+                  <div className="w-full flex flex-col gap-2">
+                    <button
+                      className="w-full bg-black hover:bg-purple text-white font-bold font-mystery hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        connectMetaMask();
+                      }}
+                    >
+                      <h1 className="text-2xl">Connect</h1>
+                    </button>
+                    <div className="w-full justify-center bg-black hover:bg-purple text-white font-mystery font-bold hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg">
+                      <a
+                        className="hover:no-underline hover:text-black flex flex-row gap-2 justify-center"
+                        href="https://spooky.fi/#/swap?outputCurrency=0xad522217e64ec347601015797dd39050a2a69694"
+                      >
+                        <span className="text-2xl no-underline">BUY</span>
+                        <Image
+                          src={pumpkin}
+                          layout="fixed"
+                          width={30}
+                          height={30}
+                        />
+                        <p className="text-2xl no-underline ">${price}</p>
+                      </a>
+                    </div>
+                  </div>
                 </>
               )}
             </div>
@@ -289,7 +323,7 @@ export default function Home() {
                 </h1>
               </div>
 
-              <div className="flex flex-row justify-center">
+              <div className="flex flex-col justify-center gap-2">
                 {!connected ? (
                   <>
                     <button
@@ -304,6 +338,18 @@ export default function Home() {
                         Eat PUMPKINS
                       </h1>
                     </button>
+                    <button
+                      className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-full"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        compound();
+                      }}
+                      disabled
+                    >
+                      <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
+                        Compound
+                      </h1>
+                    </button>
                   </>
                 ) : (
                   <>
@@ -316,6 +362,17 @@ export default function Home() {
                     >
                       <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
                         Eat PUMPKINS
+                      </h1>
+                    </button>
+                    <button
+                      className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button w-full"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        compound();
+                      }}
+                    >
+                      <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
+                        Compound
                       </h1>
                     </button>
                   </>

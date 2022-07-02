@@ -6,6 +6,7 @@ import { SkullContext } from "../contexts/SkullContext";
 import { useState, useEffect } from "react";
 import { MAX_AMOUNT, Converter } from "@maticnetwork/maticjs";
 import Web3 from "web3";
+import axios from "axios";
 
 import tokenABI from "../artifacts/Pumpkin.json";
 import stakingABI from "../artifacts/Staking.json";
@@ -33,11 +34,21 @@ function MyApp({ Component, pageProps }) {
 
   const [amount, setAmount] = useState(undefined);
   const [amountReward, setAmountReward] = useState(undefined);
+  const [price, setPrice] = useState(undefined);
 
   // refresher hooks
   const [refresh, setRefresh] = useState(false);
   const [network, setNetwork] = useState(false);
   const [staked, setStaked] = useState(false);
+
+  const url =
+    "https://api.dexscreener.com/latest/dex/pairs/fantom/0xa73d251d37040ade6e3eff71207901621c9c867a";
+
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setPrice(response.data.pairs[0].priceUsd);
+    });
+  }, []);
 
   const connectMetaMask = async () => {
     if (
@@ -132,6 +143,20 @@ function MyApp({ Component, pageProps }) {
     }
     await stakingContract.methods
       .ClaimRewards()
+      .send({
+        from: accounts[0],
+      })
+      .then(() => {
+        setStaked(!staked);
+      });
+  };
+
+  const compound = async () => {
+    if (window.ethereum.networkVersion !== CONFIG.CHAIN_ID_DEC) {
+      switchNetwork();
+    }
+    await stakingContract.methods
+      .Compound()
       .send({
         from: accounts[0],
       })
@@ -335,6 +360,8 @@ function MyApp({ Component, pageProps }) {
         setAmount,
         setAmountReward,
         claimRewards,
+        compound,
+        price,
       }}
     >
       <Component {...pageProps} />
