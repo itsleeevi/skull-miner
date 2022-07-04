@@ -191,7 +191,7 @@ function MyApp({ Component, pageProps }) {
 
   const YourStakedBalance = async () => {
     let result = await stakingContract.methods
-      .CheckLockedBalance(accounts[0])
+      .GetCurrentLock(accounts[0])
       .call();
 
     setYourStakedBalance(

@@ -114,12 +114,12 @@ export default function Home() {
       <Header />
       <div className="mt-10 mb-20 top-0">
         <div className="flex justify-center bg-black">
-          <div className="z-10 flex flex-col items-center w-full lg:w-1/3 0 gap-6 px-4 lg:px-0">
+          <div className="z-10 flex flex-col items-center w-full lg:w-1/4 0 gap-6 px-4 lg:px-0">
             <div className="text-8xl font-bold font-mystery text-center text-white space-y-4 bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
               <p>SKULL</p>
               <p>MINER</p>
             </div>
-            <div className="md:hidden flex items-center space-x-6 w-full">
+            <div className="lg:hidden flex items-center space-x-6 w-full">
               {connected ? (
                 <>
                   <div className="flex flex-col gap-2 w-full">
@@ -194,7 +194,7 @@ export default function Home() {
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
                 <h1 className="text-xl text-center font-inter font-normal">
-                  Your PUMPKINS
+                  Wallet
                 </h1>
                 <h1 className="text-xl text-center font-inter font-bold">
                   {nFormatter(yourBalance, 1)} PUMPKIN
@@ -202,7 +202,7 @@ export default function Home() {
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
                 <h1 className="text-xl sm:text-md text-center font-inter font-normal">
-                  Your Staked PUMPKINS
+                  Staked
                 </h1>
                 <h1 className="text-xl text-center font-inter font-bold">
                   {nFormatter(yourStakedBalance, 1)} PUMPKIN
@@ -319,7 +319,7 @@ export default function Home() {
                   Your Rewards
                 </h1>
                 <h1 className="text-xl text-center font-inter font-bold">
-                  {yourReward} PUMPKIN
+                  {nFormatter(yourReward, 2)} PUMPKIN
                 </h1>
               </div>
 
