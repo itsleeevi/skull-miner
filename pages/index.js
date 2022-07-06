@@ -114,8 +114,8 @@ export default function Home() {
       <Header />
       <div className="mt-10 mb-20 top-0">
         <div className="flex justify-center bg-black">
-          <div className="z-10 flex flex-col items-center w-full lg:w-1/4 0 gap-6 px-4 lg:px-0">
-            <div className="text-8xl font-bold font-mystery text-center text-white space-y-4 bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
+          <div className="z-10 flex flex-col items-center w-full lg:w-[425px] 0 gap-6 px-4 lg:px-0">
+            <div className="text-7xl font-bold font-mystery text-center text-white space-y-4 bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
               <p>SKULL</p>
               <p>MINER</p>
             </div>
@@ -130,21 +130,21 @@ export default function Home() {
                         disconnectMetaMask();
                       }}
                     >
-                      <h1 className="text-2xl">Disconnect</h1>
+                      <h1 className="text-3xl">Disconnect</h1>
                     </button>
                     <div className="w-full justify-center bg-black hover:bg-purple text-white font-mystery font-bold hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg">
                       <a
                         className="hover:no-underline hover:text-black flex flex-row gap-2 justify-center"
                         href="https://spooky.fi/#/swap?outputCurrency=0xad522217e64ec347601015797dd39050a2a69694"
                       >
-                        <span className="text-2xl no-underline">BUY</span>
+                        <span className="text-3xl no-underline">BUY</span>
                         <Image
                           src={pumpkin}
                           layout="fixed"
                           width={30}
                           height={30}
                         />
-                        <p className="text-2xl no-underline ">${price}</p>
+                        <p className="text-3xl no-underline ">${price}</p>
                       </a>
                     </div>
                   </div>
@@ -159,36 +159,36 @@ export default function Home() {
                         connectMetaMask();
                       }}
                     >
-                      <h1 className="text-2xl">Connect</h1>
+                      <h1 className="text-3xl">Connect</h1>
                     </button>
                     <div className="w-full justify-center bg-black hover:bg-purple text-white font-mystery font-bold hover:text-white py-4 px-8 border-8 border-purple hover:border-transparent rounded-lg">
                       <a
                         className="hover:no-underline hover:text-black flex flex-row gap-2 justify-center"
                         href="https://spooky.fi/#/swap?outputCurrency=0xad522217e64ec347601015797dd39050a2a69694"
                       >
-                        <span className="text-2xl no-underline">BUY</span>
+                        <span className="text-3xl no-underline">BUY</span>
                         <Image
                           src={pumpkin}
                           layout="fixed"
                           width={30}
                           height={30}
                         />
-                        <p className="text-2xl no-underline ">${price}</p>
+                        <p className="text-3xl no-underline ">${price}</p>
                       </a>
                     </div>
                   </div>
                 </>
               )}
             </div>
-            <h1 className="text-lg text-center font-inter text-white bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
+            <h1 className="text-xl text-center font-inter text-white bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
               Delicious daily return and lowest dev fee.
             </h1>
             <div className="flex flex-col bg-light drop-shadow-xl rounded-lg text-align-center px-6 py-10 w-full gap-6 text-black border-8 border-purple">
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
-                <h1 className="text-xl font-inter text-center font-normal ">
+                <h1 className="text-2xl font-inter text-center font-normal ">
                   Contract
                 </h1>
-                <h1 className="text-xl font-inter font-bold text-center">
+                <h1 className="text-2xl font-inter font-bold text-center">
                   {nFormatter(totalStaked, 1)} PUMPKIN
                 </h1>
               </div>
@@ -196,15 +196,15 @@ export default function Home() {
                 <h1 className="text-xl text-center font-inter font-normal">
                   Wallet
                 </h1>
-                <h1 className="text-xl text-center font-inter font-bold">
+                <h1 className="text-2xl text-center font-inter font-bold">
                   {nFormatter(yourBalance, 1)} PUMPKIN
                 </h1>
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
-                <h1 className="text-xl sm:text-md text-center font-inter font-normal">
+                <h1 className="text-2xl sm:text-md text-center font-inter font-normal">
                   Staked
                 </h1>
-                <h1 className="text-xl text-center font-inter font-bold">
+                <h1 className="text-2xl text-center font-inter font-bold">
                   {nFormatter(yourStakedBalance, 1)} PUMPKIN
                 </h1>
               </div>
@@ -240,7 +240,7 @@ export default function Home() {
                                   right: "10px",
                                 }}
                               >
-                                <Text className="font-bold" size="small">
+                                <Text className="font-bold" size="medium">
                                   Max
                                 </Text>
                               </Box>
@@ -256,7 +256,7 @@ export default function Home() {
                                 right: "10px",
                               }}
                             >
-                              <Text className="font-bold" size="small">
+                              <Text className="font-bold" size="medium">
                                 Max
                               </Text>
                             </Box>
@@ -278,7 +278,7 @@ export default function Home() {
                           approve();
                         }}
                       >
-                        <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
+                        <h1 className="text-4xl text-center font-mystery font-bold tracking-widest">
                           APPROVE CONTRACT
                         </h1>
                       </button>
@@ -292,7 +292,7 @@ export default function Home() {
                           stake(amount);
                         }}
                       >
-                        <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
+                        <h1 className="text-4xl text-center font-mystery font-bold tracking-widest">
                           Mine PUMPKINS
                         </h1>
                       </button>
@@ -305,7 +305,7 @@ export default function Home() {
                     className="bg-dark hover:bg-purple text-white font-bold py-2 px-4 rounded-button"
                     disabled
                   >
-                    <h1 className="text-3xl text-center font-mystery font-bold tracking-widest">
+                    <h1 className="text-4xl text-center font-mystery font-bold tracking-widest">
                       Mine PUMPKINS
                     </h1>
                   </button>
@@ -315,10 +315,10 @@ export default function Home() {
               <div className="my-2 w-full border-t border-black" />
 
               <div className="flex flex-row justify-between cursor-default">
-                <h1 className="text-xl text-center font-normal font-inter">
+                <h1 className="text-2xl text-center font-normal font-inter">
                   Your Rewards
                 </h1>
-                <h1 className="text-xl text-center font-inter font-bold">
+                <h1 className="text-2xl text-center font-inter font-bold">
                   {nFormatter(yourReward, 2)} PUMPKIN
                 </h1>
               </div>
@@ -334,7 +334,7 @@ export default function Home() {
                       }}
                       disabled
                     >
-                      <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
+                      <h1 className="text-4xl text-center font-mystery font-bold tracking-wider">
                         Eat PUMPKINS
                       </h1>
                     </button>
@@ -346,7 +346,7 @@ export default function Home() {
                       }}
                       disabled
                     >
-                      <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
+                      <h1 className="text-4xl text-center font-mystery font-bold tracking-wider">
                         Compound
                       </h1>
                     </button>
@@ -360,7 +360,7 @@ export default function Home() {
                         claimRewards();
                       }}
                     >
-                      <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
+                      <h1 className="text-4xl text-center font-mystery font-bold tracking-wider">
                         Eat PUMPKINS
                       </h1>
                     </button>
@@ -371,7 +371,7 @@ export default function Home() {
                         compound();
                       }}
                     >
-                      <h1 className="text-3xl text-center font-mystery font-bold tracking-wider">
+                      <h1 className="text-4xl text-center font-mystery font-bold tracking-wider">
                         Compound
                       </h1>
                     </button>
@@ -385,24 +385,28 @@ export default function Home() {
               </h1>
               <div className="w-full border-t border-4 border-black" />
               <div className="flex flex-row justify-between cursor-default">
-                <h1 className="text-xl text-center font-inter">Daily Return</h1>
-                <h1 className="text-xl text-center font-inter font-bold">
+                <h1 className="text-2xl text-center font-inter">
+                  Daily Return
+                </h1>
+                <h1 className="text-2xl text-center font-inter font-bold">
                   {dailyReturn}%
                 </h1>
               </div>
               <div className="flex flex-row justify-between cursor-default">
-                <h1 className="text-xl text-center font-normal font-inter">
+                <h1 className="text-2xl text-center font-normal font-inter">
                   APR
                 </h1>
-                <h1 className="text-xl text-center font-inter font-bold">
+                <h1 className="text-2xl text-center font-inter font-bold">
                   {apr}%
                 </h1>
               </div>
               <div className="flex flex-row justify-between cursor-default">
-                <h1 className="text-xl text-center font-normal font-inter">
+                <h1 className="text-2xl text-center font-normal font-inter">
                   Dev Fee
                 </h1>
-                <h1 className="text-xl text-center font-inter font-bold">0%</h1>
+                <h1 className="text-2xl text-center font-inter font-bold">
+                  0%
+                </h1>
               </div>
             </div>
             {/* 
