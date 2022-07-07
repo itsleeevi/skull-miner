@@ -114,7 +114,7 @@ export default function Home() {
       <Header />
       <div className="mt-10 mb-20 top-0">
         <div className="flex justify-center bg-black">
-          <div className="z-10 flex flex-col items-center w-full lg:w-[425px] 0 gap-6 px-4 lg:px-0">
+          <div className="z-10 flex flex-col items-center w-full lg:w-[625px] 0 gap-6 px-4 lg:px-0">
             <div className="text-7xl font-bold font-mystery text-center text-white space-y-4 bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
               <p>SKULL</p>
               <p>MINER</p>
