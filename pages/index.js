@@ -423,8 +423,18 @@ export default function Home() {
             */}
 
             <div className="flex flex-row justify-center gap-10">
-              <Image src={discord} height={50} width={50} />
-              <Image src={twitter} height={50} width={50} />
+              <a
+                className="hover:scale-110 hover:no-underline hover:text-black hover:cursor-pointer hover:contrast-200 transition duration-700 ease-in-out flex flex-row gap-2 justify-center"
+                href="https://discord.com/invite/pumpkins"
+              >
+                <Image src={discord} height={50} width={50} />
+              </a>
+              <a
+                className="hover:scale-110 hover:no-underline hover:text-black hover:cursor-pointer hover:contrast-200 transition duration-700 ease-in-out flex flex-row gap-2 justify-center"
+                href="https://www.pumpkin.financial/"
+              >
+                <Image src={pumpkin} height={50} width={50} />
+              </a>
             </div>
           </div>
         </div>
