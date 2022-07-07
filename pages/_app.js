@@ -11,8 +11,8 @@ import axios from "axios";
 import tokenABI from "../artifacts/Pumpkin.json";
 import stakingABI from "../artifacts/Staking.json";
 
-//import CONFIG from "../config/config.json"; // -> for mainnet
-import CONFIG from "../config/configRinkeby.json"; // -> for rinkeby
+import CONFIG from "../config/config.json"; // -> for mainnet
+//import CONFIG from "../config/configRinkeby.json"; // -> for rinkeby
 
 function MyApp({ Component, pageProps }) {
   // web3 hooks

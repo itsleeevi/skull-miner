@@ -6,6 +6,6 @@
   "CURRENCY_SYMBOL": "FTM",
   "RPC": "https://rpc.ftm.tools",
   "BLOCK_EXPLORER": "https://ftmscan.com/",
-  "STAKING_ADDRESS": "0x579f7f486FD6cDdDa346700B4F6cd5a802828B06",
+  "STAKING_ADDRESS": "0xeec6f889542ba4cf5dfdce79edff7da1fa7e93b1",
   "TOKEN_ADDRESS": "0xad522217e64ec347601015797dd39050a2a69694"
 }

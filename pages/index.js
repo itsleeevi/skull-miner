@@ -193,7 +193,7 @@ export default function Home() {
                 </h1>
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
-                <h1 className="text-xl text-center font-inter font-normal">
+                <h1 className="text-2xl text-center font-inter font-normal">
                   Wallet
                 </h1>
                 <h1 className="text-2xl text-center font-inter font-bold">
