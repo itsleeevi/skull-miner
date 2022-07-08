@@ -336,7 +336,7 @@ export default function Home() {
 
               <div className="my-2 w-full border-t border-black" />
 
-              <div className="flex flex-row justify-between cursor-default">
+              <div className="flex lg:flex-row flex-col justify-between cursor-default">
                 <h1 className="text-2xl text-center font-normal font-inter">
                   Your Rewards
                 </h1>
