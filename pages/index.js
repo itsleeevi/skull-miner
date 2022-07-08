@@ -114,7 +114,7 @@ export default function Home() {
       <Header />
       <div className="mt-10 mb-20 top-0">
         <div className="flex justify-center bg-black">
-          <div className="z-10 flex flex-col items-center w-full lg:w-[625px] 0 gap-6 px-4 lg:px-0">
+          <div className="z-10 flex flex-col items-center w-full lg:w-[420px] 0 gap-6 px-4 lg:px-0">
             <div className="text-7xl font-bold font-mystery text-center text-white space-y-4 bg-black/80 hover:scale-110 transition delay-150 duration-300 ease-in-out cursor-default">
               <p>SKULL</p>
               <p>MINER</p>
@@ -197,7 +197,18 @@ export default function Home() {
                   Wallet
                 </h1>
                 <h1 className="text-2xl text-center font-inter font-bold">
-                  {nFormatter(yourBalance, 1)} PUMPKIN
+                  {connected ? (
+                    <>
+                      {Number(yourBalance) > 1000 ? (
+                        <>{nFormatter(yourBalance, 1)}</>
+                      ) : (
+                        <>{Number(yourBalance).toFixed(2)}</>
+                      )}
+                    </>
+                  ) : (
+                    <>{0}</>
+                  )}{" "}
+                  PUMPKIN
                 </h1>
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
@@ -205,7 +216,18 @@ export default function Home() {
                   Staked
                 </h1>
                 <h1 className="text-2xl text-center font-inter font-bold">
-                  {nFormatter(yourStakedBalance, 1)} PUMPKIN
+                  {connected ? (
+                    <>
+                      {Number(yourStakedBalance) > 1000 ? (
+                        <>{nFormatter(yourStakedBalance, 1)}</>
+                      ) : (
+                        <>{Number(yourStakedBalance).toFixed(2)}</>
+                      )}
+                    </>
+                  ) : (
+                    <>{0}</>
+                  )}{" "}
+                  PUMPKIN
                 </h1>
               </div>
               <div className="inputNum rounded">
@@ -319,7 +341,18 @@ export default function Home() {
                   Your Rewards
                 </h1>
                 <h1 className="text-2xl text-center font-inter font-bold">
-                  {nFormatter(yourReward, 2)} PUMPKIN
+                  {connected ? (
+                    <>
+                      {Number(yourReward) > 1000 ? (
+                        <>{nFormatter(yourReward, 1)}</>
+                      ) : (
+                        <>{Number(yourReward).toFixed(1)}</>
+                      )}
+                    </>
+                  ) : (
+                    <>{0}</>
+                  )}{" "}
+                  PUMPKIN
                 </h1>
               </div>
 
