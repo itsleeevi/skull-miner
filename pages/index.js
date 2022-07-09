@@ -189,7 +189,7 @@ export default function Home() {
                   Contract
                 </h1>
                 <h1 className="text-2xl font-inter font-bold text-center">
-                  {nFormatter(totalStaked, 1)} PUMPKIN
+                  {totalStaked} PUMPKIN
                 </h1>
               </div>
               <div className="flex lg:flex-row flex-col justify-between cursor-default">
@@ -199,11 +199,7 @@ export default function Home() {
                 <h1 className="text-2xl text-center font-inter font-bold">
                   {connected ? (
                     <>
-                      {Number(yourBalance) > 1000 ? (
-                        <>{nFormatter(yourBalance, 1)}</>
-                      ) : (
-                        <>{Number(yourBalance).toFixed(2)}</>
-                      )}
+                      <>{Number(yourBalance).toFixed(2)}</>
                     </>
                   ) : (
                     <>{0}</>
@@ -218,11 +214,7 @@ export default function Home() {
                 <h1 className="text-2xl text-center font-inter font-bold">
                   {connected ? (
                     <>
-                      {Number(yourStakedBalance) > 1000 ? (
-                        <>{nFormatter(yourStakedBalance, 1)}</>
-                      ) : (
-                        <>{Number(yourStakedBalance).toFixed(2)}</>
-                      )}
+                      <>{Number(yourStakedBalance).toFixed(2)}</>
                     </>
                   ) : (
                     <>{0}</>
