@@ -261,7 +261,7 @@ function MyApp({ Component, pageProps }) {
       };
 
       if (window.ethereum.networkVersion !== CONFIG.CHAIN_ID_DEC) {
-        switchNetwork();
+        //switchNetwork();
       } else {
         init();
       }
